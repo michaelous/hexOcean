@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/app.scss"],"names":[],"mappings":"AAAA,EACE,6BAA+B,CAC/B,QAAS,CACT,SAAU,CACV,eAAgB","file":"main.9a5ca8d7.chunk.css","sourcesContent":["* {\r\n  font-family: 'Lato', sans-serif;\r\n  margin: 0;\r\n  padding: 0;\r\n  overflow: hidden;\r\n}\r\n\r\n\r\n\r\n"]}
