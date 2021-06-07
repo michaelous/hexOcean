@@ -1,5 +1,6 @@
 Run:<br>
 cd app<br>
+npm install <br>
 npm start<br>
 http://localhost:3000/
 
