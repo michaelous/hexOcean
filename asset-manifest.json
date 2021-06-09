@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/hexOcean/app/static/css/main.9a5ca8d7.chunk.css",
-    "main.js": "/hexOcean/app/static/js/main.d74ee6ff.chunk.js",
-    "main.js.map": "/hexOcean/app/static/js/main.d74ee6ff.chunk.js.map",
-    "runtime-main.js": "/hexOcean/app/static/js/runtime-main.5bf4b8c7.js",
-    "runtime-main.js.map": "/hexOcean/app/static/js/runtime-main.5bf4b8c7.js.map",
-    "static/js/2.73733f62.chunk.js": "/hexOcean/app/static/js/2.73733f62.chunk.js",
-    "static/js/2.73733f62.chunk.js.map": "/hexOcean/app/static/js/2.73733f62.chunk.js.map",
-    "index.html": "/hexOcean/app/index.html",
-    "static/css/main.9a5ca8d7.chunk.css.map": "/hexOcean/app/static/css/main.9a5ca8d7.chunk.css.map",
-    "static/js/2.73733f62.chunk.js.LICENSE.txt": "/hexOcean/app/static/js/2.73733f62.chunk.js.LICENSE.txt"
+    "main.css": "/hexOcean/static/css/main.9a5ca8d7.chunk.css",
+    "main.js": "/hexOcean/static/js/main.d74ee6ff.chunk.js",
+    "main.js.map": "/hexOcean/static/js/main.d74ee6ff.chunk.js.map",
+    "runtime-main.js": "/hexOcean/static/js/runtime-main.2ff05129.js",
+    "runtime-main.js.map": "/hexOcean/static/js/runtime-main.2ff05129.js.map",
+    "static/js/2.8e018306.chunk.js": "/hexOcean/static/js/2.8e018306.chunk.js",
+    "static/js/2.8e018306.chunk.js.map": "/hexOcean/static/js/2.8e018306.chunk.js.map",
+    "index.html": "/hexOcean/index.html",
+    "static/css/main.9a5ca8d7.chunk.css.map": "/hexOcean/static/css/main.9a5ca8d7.chunk.css.map",
+    "static/js/2.8e018306.chunk.js.LICENSE.txt": "/hexOcean/static/js/2.8e018306.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.5bf4b8c7.js",
-    "static/js/2.73733f62.chunk.js",
+    "static/js/runtime-main.2ff05129.js",
+    "static/js/2.8e018306.chunk.js",
     "static/css/main.9a5ca8d7.chunk.css",
     "static/js/main.d74ee6ff.chunk.js"
   ]
