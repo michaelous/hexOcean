@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {useForm} from "react-hook-form";
 import {SubmitBtn} from "./styled-components/submitBtn";
 import {HookForm} from "./styled-components/hookForm";
@@ -16,24 +16,33 @@ const initialFoodType = 'pizza';
 export const Form = () => {
     const {register, handleSubmit, formState: {errors}, reset} = useForm();
     const [foodType, setFoodType] = useState(initialFoodType);
+    const keysValues = ['spiciness_scale', 'slices_of_bread', 'no_of_slices', 'diameter']
 
     useEffect(() => {
         reset();
     }, [foodType])
 
+
+    function convertObjectStringsToNum(data) {
+        keysValues.map((value) => {
+            if (value in data) data[value] = Number(data[value]);
+        })
+        return data;
+    }
+
     const onSubmit = async (data) => {
+        let object = convertObjectStringsToNum(data);
         try {
-            const config = {
-                method: 'POST',
+            const res = await fetch(URL, {
+                method: "POST",
+                body: JSON.stringify(object),
                 headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            }
-            const response = await fetch(URL, config)
-            if (response.ok) {
-                return response
-            }
+                    "Content-Type": "application/json"
+                }
+            });
+            const response = await res.json();
+            console.log(response);
+            return response;
         } catch (error) {
             console.log(error)
         }
@@ -44,8 +53,8 @@ export const Form = () => {
         switch (Type) {
             case 'pizza':
                 return <>
-                    <FormLabel htmlFor="number_of_slices">Pizza slices</FormLabel>
-                    <FormInput type="number" placeholder="Slices quantity" {...register("number_of_slices", {
+                    <FormLabel htmlFor="no_of_slices">Pizza slices</FormLabel>
+                    <FormInput type="number" placeholder="Slices quantity" {...register("no_of_slices", {
                         required: "Required",
                         min: {
                             value: 4,
@@ -56,7 +65,7 @@ export const Form = () => {
                             message: "Maximum 12 slices"
                         }
                     })} />
-                    {errors.number_of_slices && <FormAlert role="alert">{errors.number_of_slices.message}</FormAlert>}
+                    {errors.no_of_slices && <FormAlert role="alert">{errors.no_of_slices.message}</FormAlert>}
 
                     <FormLabel htmlFor="diameter">Pizza diameter</FormLabel>
                     <FormInput type="number" placeholder="Pizza diameter" {...register("diameter", {
@@ -75,8 +84,8 @@ export const Form = () => {
 
             case 'soup':
                 return <>
-                    <FormLabel htmlFor="spicness_scale">Soup spicness</FormLabel>
-                    <FormInput type={'number'} placeholder="Spicness scale" {...register("spicness_scale", {
+                    <FormLabel htmlFor="spiciness_scale">Soup spicness</FormLabel>
+                    <FormInput type={'number'} placeholder="Spiciness scale" {...register("spiciness_scale", {
                         required: "Required",
                         min: {
                             value: 1,
@@ -87,13 +96,13 @@ export const Form = () => {
                             message: "Maximum 10"
                         }
                     })} />
-                    {errors.spicness_scale && <FormAlert role="alert">{errors.spicness_scale.message}</FormAlert>}
+                    {errors.spiciness_scale && <FormAlert role="alert">{errors.spiciness_scale.message}</FormAlert>}
                 </>
 
             case 'sandwich':
                 return <>
-                    <FormLabel htmlFor="sandwich_slices">Sandwich Slices</FormLabel>
-                    <FormInput type="number" placeholder="Sandwich slices" {...register("sandwich_slices", {
+                    <FormLabel htmlFor="slices_of_bread">Sandwich Slices</FormLabel>
+                    <FormInput type="number" placeholder="Sandwich slices" {...register("slices_of_bread", {
                         required: "Required",
                         min: {
                             value: 1,
@@ -104,7 +113,7 @@ export const Form = () => {
                             message: "Maximum 10 slices"
                         }
                     })} />
-                    {errors.sandwich_slices && <FormAlert role="alert">{errors.sandwich_slices.message}</FormAlert>}
+                    {errors.slices_of_bread && <FormAlert role="alert">{errors.slices_of_bread.message}</FormAlert>}
                 </>
         }
     }
