@@ -14,6 +14,6 @@ Scss
 <br>
 <br>
 Live version:<br>
-https://michaelous.github.io/hexOcean/app
+https://michaelous.github.io/hexOcean/
 
 
